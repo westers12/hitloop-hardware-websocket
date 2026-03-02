@@ -279,10 +279,10 @@ public:
 };
 
 // Define default values
-const String Configuration::DEFAULT_WIFI_SSID = "IOT";
-const String Configuration::DEFAULT_WIFI_PASSWORD = "!HVAIOT!";
-const String Configuration::DEFAULT_SOCKET_SERVER_URL = "ws://feib.nl:5003";
-const int Configuration::DEFAULT_LED_PIN = 3;
+const String Configuration::DEFAULT_WIFI_SSID = "IOT Wester";
+const String Configuration::DEFAULT_WIFI_PASSWORD = "12345678";
+const String Configuration::DEFAULT_SOCKET_SERVER_URL = "ws://192.168.1.94:5003";
+const int Configuration::DEFAULT_LED_PIN = 48;
 const int Configuration::DEFAULT_MOTOR_PIN = 2;
 const String Configuration::DEFAULT_DEVICE_NAME_PREFIX = "HitloopScanner";
 const String Configuration::DEFAULT_BEACON_NE = "64:e8:33:84:43:9a";
@@ -305,4 +305,4 @@ const char* Configuration::KEY_BEACON_SW = "beacon_sw";
 
 extern Configuration configuration;
 
-#endif // CONFIGURATION_H
+#endif // CONFIGURATION

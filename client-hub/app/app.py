@@ -9,6 +9,30 @@ BASE_DIR = Path(__file__).parent
 STATIC_APPS_DIR = (BASE_DIR / "static" / "apps").resolve()
 
 
+COMMANDS = {"commands":
+    {
+        "led": {
+            "handler": "led",
+            "parameters": [
+                "color"
+            ],
+            "description": "Set LED color"
+        },
+        "vibrate": {
+            "handler": "vibrate",
+            "parameters": [
+                "duration"
+            ],
+            "description": "Vibrate device"
+        },
+        "status": {
+            "handler": "status",
+            "parameters": [],
+            "description": "Get device status"
+        }
+    }
+}
+
 def _is_within(path: Path, root: Path) -> bool:
     try:
         path.resolve().relative_to(root.resolve())
@@ -71,6 +95,10 @@ def create_app() -> Flask:
         }
         body = f"window.APP_CONFIG = {json.dumps(cfg)};"
         return Response(body, mimetype="application/javascript")
+    
+    @app.route("/commands")
+    def commands():
+        return jsonify(COMMANDS)
 
     @app.route("/apps/<app_name>/")
     def serve_app_index(app_name: str):
