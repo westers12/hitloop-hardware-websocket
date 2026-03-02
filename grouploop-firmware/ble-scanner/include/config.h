@@ -19,7 +19,7 @@
 
 #define IMU_UPDATE_INTERVAL_MS 10
 
-#define LED_COUNT 6
+#define LED_COUNT 1
 
 #define VIBRATION_MOTOR_PIN 0
 

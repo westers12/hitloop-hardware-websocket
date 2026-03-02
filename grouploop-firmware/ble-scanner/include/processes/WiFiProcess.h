@@ -152,7 +152,7 @@ private:
         Serial.print("/");
         Serial.print(maxReconnectAttempts);
         Serial.println(")...");
-        
+
         // Try to connect using WiFiMulti
         uint8_t result = wifiMulti.run(10000); // 10 second timeout
         
