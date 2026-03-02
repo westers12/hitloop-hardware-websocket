@@ -22,8 +22,8 @@ def default_label(ws: WebSocketServerProtocol) -> str:
 async def load_commands():
     """Load command definitions from CDN"""
     global command_registry
-    cdn_url = os.environ.get("CDN_BASE_URL", "http://cdn.hitloop.feib.nl")
-    commands_url = f"{cdn_url}/static/commands.json"
+    cdn_url = os.environ.get("CDN_BASE_URL", "http://client_hub:5000")
+    commands_url = f"{cdn_url}/commands"
     
     try:
         async with aiohttp.ClientSession() as session:
