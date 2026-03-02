@@ -8,7 +8,6 @@ services:
     build:
       context: ./socket-server
       dockerfile: Dockerfile
-    pull_policy: always
     ports:
       - "5003:5000" # WebSocket server (bind on all interfaces)
     volumes:
